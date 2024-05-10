@@ -1,6 +1,7 @@
 """
 Base settings to build other settings files upon.
 """
+
 from pathlib import Path
 
 import environ
@@ -69,6 +70,7 @@ THIRD_PARTY_APPS = [
     "corsheaders",
     "drf_yasg",
     "djoser",
+    "graphene_django",
 ]
 
 LOCAL_APPS = [
@@ -325,3 +327,6 @@ GOOGLE_CLOUD_TASKS_DEFAULT_QUEUE = env.str(
     "GOOGLE_CLOUD_TASKS_DEFAULT_QUEUE", "default-queue"
 )
 GOOGLE_CLOUD_TASKS_ON_GAE = env.bool("GOOGLE_CLOUD_TASKS_ON_GAE", default=False)
+
+# Graphene
+GRAPHENE = {"SCHEMA": "django_root.schema.schema"}
